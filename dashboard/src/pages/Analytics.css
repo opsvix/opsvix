@@ -1,0 +1,148 @@
+.analytics-page .page-header { margin-bottom: 24px; }
+
+.analytics-error {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.analytics-error svg { color: #4a4a5a; margin-bottom: 16px; }
+.analytics-error h3 { font-size: 18px; color: #e1e1e6; margin: 0 0 8px; }
+.analytics-error p { color: #6b6b7b; font-size: 14px; }
+
+.error-steps {
+  max-width: 500px;
+  margin: 24px auto 0;
+  text-align: left;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.error-steps p { color: #d1d5db; font-weight: 600; margin-bottom: 10px; }
+.error-steps ol { padding-left: 20px; margin: 0; }
+.error-steps li { color: #9ca3af; font-size: 13px; line-height: 1.8; }
+.error-steps code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #a78bfa; }
+
+.full-width {
+  grid-column: 1 / -1;
+  margin-bottom: 16px;
+}
+
+/* Device Breakdown */
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.device-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.device-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  flex-shrink: 0;
+}
+
+.device-info {
+  flex: 1;
+}
+
+.device-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.device-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.device-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.device-stats {
+  text-align: right;
+  min-width: 60px;
+}
+
+.device-users {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f1f1f6;
+}
+
+.device-pct {
+  font-size: 12px;
+  color: #6b6b7b;
+}
+
+/* Data Tables */
+.data-table-container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b6b7b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.data-table td {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #b0b0bf;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.data-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.page-path {
+  font-family: monospace;
+  font-size: 12px;
+  color: #a78bfa;
+}
+
+.event-name {
+  font-family: monospace;
+  font-size: 12px;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
