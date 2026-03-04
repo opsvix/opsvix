@@ -21,33 +21,33 @@ const TextOpacityOnScroll: React.FC<Props> = ({
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const createAnimation = () => {
+      gsap.to(refs.current, {
+        keyframes: [
+          { color: "#8FDDFF", opacity: 1, duration: 0.01 },
+          { color: "#5360DC", opacity: 1, duration: 0.4 },
+          { color: "#010166", opacity: 1, duration: 0.5 },
+          { color: "#000", opacity: 1, duration: 1 },
+        ],
+        stagger: 0.1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: body.current,
+          scrub: true,
+          start: "top 20%",
+          end: `+=${window.innerHeight / 1.1}`,
+          pin: contain.current,
+        },
+      });
+    };
+
     createAnimation();
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [contain]);
-
-  // const color = resolvedTheme === "dark" ? "#000" : "#fff";
-  const createAnimation = () => {
-    gsap.to(refs.current, {
-      keyframes: [
-        { color: "#8FDDFF", opacity: 1, duration: 0.01 },
-        { color: "#5360DC", opacity: 1, duration: 0.4 },
-        { color: "#010166", opacity: 1, duration: 0.5 },
-        { color: "#000", opacity: 1, duration: 1 },
-      ],
-      stagger: 0.1,
-      ease: "none",
-      scrollTrigger: {
-        trigger: body.current,
-        scrub: true,
-
-        start: "top 20%",
-        end: `+=${window.innerHeight / 1.1}`,
-        pin: contain.current,
-      },
-    });
-  };
 
   const splitWords = (phrase: string) => {
     return phrase.split(" ").map((word, i) => (
@@ -78,7 +78,7 @@ const TextOpacityOnScroll: React.FC<Props> = ({
         className,
       )}
     >
-      <div ref={body} className="flex flex-wrap leading-[1.2]">
+      <div ref={body} className="flex flex-wrap leading-[1.4]">
         {splitWords(phrase)}
       </div>
     </main>

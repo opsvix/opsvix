@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Navigation } from "./Navigation";
 
 type Props = {
   children: React.ReactNode;

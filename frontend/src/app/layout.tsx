@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Merriweather } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import { Navigation } from "@/layout/Navigation";
+import { ContactProvider } from "@/context/ContactContext";
+import { RootLayoutContent } from "@/components/RootLayoutContent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +13,33 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const MerriWeather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: "300",
+})
+
+const telegraf = localFont({
+  src: [
+    {
+      path: "../../public/telegraf/TelegrafRegular_272984568a25d8528fe2de8b20b29011.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/telegraf/Telegraf UltraLight 200.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/telegraf/Telegraf UltraBold 800.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-telegraf",
 });
 
 export const metadata: Metadata = {
@@ -26,10 +55,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${telegraf.variable} ${geistSans.variable} ${geistMono.variable} ${MerriWeather.variable} antialiased`}
       >
-        {children}
-        <Navigation />
+        <ContactProvider>
+          <RootLayoutContent>{children}</RootLayoutContent>
+        </ContactProvider>
       </body>
     </html>
   );

@@ -1,16 +1,10 @@
+import { Project } from "@/lib/types";
 import { Label } from "@/ui/label";
 import { Typograph } from "@/ui/typograph";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Project {
-    id: number;
-    title: string;
-    slug: string;
-    description: string;
-    image: string;
-    services: string[];
-}
+
 
 type ProjectProps = {
     project: Project;
@@ -21,7 +15,7 @@ const Card = ({ project }: ProjectProps) => {
         <Link href={`/portfolio/${project.slug}`} className="w-full flex flex-col gap-4 group cursor-pointer">
             <div className="h-96 overflow-hidden border-2 border-gray-200 object-center ">
                 <Image
-                    src={project.image}
+                    src={project.image[0]}
                     alt={project.title}
                     width={500}
                     height={500}

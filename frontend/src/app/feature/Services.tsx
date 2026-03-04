@@ -4,13 +4,13 @@ import Grid from "@/components/PortfolioGrid";
 import Card from "@/components/projectCard";
 import { Typograph } from "@/ui/typograph";
 import { Button } from "@/ui/button";
+import Link from "next/link";
 
-
-type Props = {};
-
-const Services = (props: Props) => {
+const Services = () => {
   return <div className="w-full h-full px-20 2xl:px-40 mx-auto bg-[#fcfcfc]   `">
-    <Typograph variant="heading">Stories That Help <br /> Our Services Flourish</Typograph>
+    <Typograph variant="heading" className="text-5xl h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)]">
+      <span className="font-merriweather italic">Stories </span>That Help <br /> Our Services <span className="font-merriweather ">Flourish </span>
+    </Typograph>
     <Typograph size="sub">
       Showcasing the ideas and outcomes behind what we do. Where creativity meets purpose and performance
     </Typograph>
@@ -21,9 +21,9 @@ const Services = (props: Props) => {
     </Grid>
     <div className="w-full flex justify-center mt-20">
       <Button asChild>
-        <a href="/portfolio">
+        <Link href="/portfolio">
           View More
-        </a>
+        </Link>
       </Button>
     </div>
   </div >;

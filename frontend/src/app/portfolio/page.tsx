@@ -2,7 +2,6 @@ import Grid from '@/components/PortfolioGrid';
 import Card from '@/components/projectCard';
 import CustomLayout from '@/layout/CustomLayout';
 import { projects } from '@/lib/data';
-import React from 'react'
 
 const PortfolioPage = () => {
 
@@ -16,7 +15,7 @@ const PortfolioPage = () => {
                         <Card key={project.id} project={project} />
                     ))}
                 </Grid>
-                <p className='text-center text-gray-500   py-20 2xl:py-30 w-1/3 mx-auto'>You're reached the end</p>
+                <p className='text-center text-gray-500   py-20 2xl:py-30 w-1/3 mx-auto'>You&apos;re reached the end</p>
             </div >
         </CustomLayout>
     )

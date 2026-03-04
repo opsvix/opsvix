@@ -1,5 +1,5 @@
 import { projects } from '@/lib/data';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Button } from '@/ui/button';
@@ -7,6 +7,9 @@ import { Label } from '@/ui/label';
 import Contact from '@/app/feature/Contact';
 import CustomLayout from '@/layout/CustomLayout';
 import { Typograph } from '@/ui/typograph';
+import { ImageContainer } from './feature/ImageContainer';
+
+import { DesignStrategy } from './feature/DesingStrategy';
 
 export async function generateStaticParams() {
    return projects.map((project) => ({
@@ -14,12 +17,17 @@ export async function generateStaticParams() {
    }));
 }
 
-export default async function ProjectPage({
-   params,
-}: {
+interface ProjectPageProps {
    params: Promise<{ slug: string[] }>;
-}) {
+}
+
+
+export default async function ProjectPage({ params }: ProjectPageProps) {
    const { slug } = await params;
+
+
+
+
 
    // Handle the case where slug might be missing or empty if called directly incorrectly
    if (!slug || slug.length === 0) {
@@ -56,27 +64,27 @@ export default async function ProjectPage({
                   <Button className="w-fit">View Website</Button>
                </div>
             </div>
-            <div className='w-full h-96 relative '>
-               <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover w-full h-full"
-                  priority
-               />
-            </div>
+            <ImageContainer image={project.image[0]} />
             <div className="w-full py-20 flex flex-row jutify-between ">
                {[{ count: "10k+", title: 'Happy Clients' }, { count: "63%", title: 'Increased Efficiency' }, { count: "30%", title: 'Reduced Costs' }].map((item, index) => (
                   <div key={index} className={`w-full border-r border-gray-300 ${index === 2 ? 'border-r-0' : ''}`}>
                      <Typograph variant="heading" className='pt-0'>
                         {item.count}
                      </Typograph>
-                     <Typograph variant="paragraph" className="text-center">
+                     <Typograph variant="tittle" className="text-center">
                         {item.title}
                      </Typograph>
                   </div>
                ))}
             </div>
+            <div className="w-2/3 mx-auto h-full flex flex-col gap-3">
+               <Typograph variant="subheading">lnsights</Typograph>
+               <Typograph variant="paragraph">
+                  {project.insights}
+               </Typograph>
+            </div>
+            <DesignStrategy project={project} />
+
             <Link href="/portfolio">back</Link>
             <div className="w-full h-screen">
                <Contact />

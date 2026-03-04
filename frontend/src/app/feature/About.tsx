@@ -5,13 +5,13 @@ import trustedleft from "../../../public/logos/trustedleft.svg"
 import trustedright from "../../../public/logos/trustedright.svg"
 import Image from "next/image";
 import mapmyproperty from "../../../public/logos/mapmyproperty.png"
-import reddotconsltency from "../../../public/logos/mapmyproperty.png"
-import pertyai from "../../../public/logos/mapmyproperty.png"
+import travancoregradens from "../../../public/logos/travancoregradens.png"
+import lakshmi from "../../../public/logos/lakshmi.png"
+import holidays from "../../../public/logos/holidays.png"
 
-const companies = [mapmyproperty, reddotconsltency, pertyai, mapmyproperty, mapmyproperty, mapmyproperty];
-type Props = {};
+const companies = [mapmyproperty, travancoregradens, lakshmi, holidays];
 
-const About = (props: Props) => {
+const About = () => {
   const contain = useRef<HTMLDivElement | null>(null);
   return (
     <div
@@ -19,7 +19,7 @@ const About = (props: Props) => {
       ref={contain}
     >
       <TextOpacityOnScroll
-        className="w-full h-full flex items-center justify-center text-black text-2xl md:text-4xl lg:text-5xl font-extralight  text-center"
+        className="w-full h-full flex items-center justify-center text-black text-2xl md:text-4xl lg:text-5xl font-extralight  text-center font-telegraf leading-3 "
         contain={contain}
         phrase="Opsvix Solutions partners with global companies to design, build, and
         scale digital products through strong engineering, practical AI, and
@@ -53,8 +53,8 @@ export const Carousel = () => {
       >
         <div className="flex flex-row animate-scroll hover:[animation-play-state:paused] w-max">
           {[...companies, ...companies].map((logo, index) => (
-            <div key={index} className="relative w-72 h-20 mr-12 md:mr-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110 cursor-pointer">
-              <Image src={logo} alt={`Logo ${index}`} className="object-contain w-full h-full" width={300} height={300} />
+            <div key={index} className="relative w-72 h-20 mr-12 md:mr-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-105 cursor-pointer hover:opacity-100 opacity-50">
+              <Image src={logo} alt={`Logo ${index}`} className="object-contain w-full h-full " width={300} height={300} />
             </div>
           ))}
         </div>

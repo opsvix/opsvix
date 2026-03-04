@@ -9,10 +9,11 @@ const typographVariants = cva(
     {
         variants: {
             variant: {
-                default: '',
-                heading: 'text-4xl  text-center pt-20 bg-clip-text text-transparent bg-linear-to-r to-[#00003E] from-[#0000A4] bg-clip leading-tight ',
+                default: 'font-telegraf',
+                heading: 'text-5xl  text-center pt-20 bg-clip-text text-transparent bg-linear-to-r to-[#00003E] from-[#0000A4] bg-clip leading-tight font-telegraf',
+                subheading: 'text-3xl  text-start pt-20 bg-clip-text text-transparent bg-linear-to-r to-[#00003E] from-[#0000A4] bg-clip leading-tight font-telegraf',
                 tittle: 'text-lg  pl-2 text-black transition-colors',
-                paragraph: '',
+                paragraph: 'text-2xl text-black leading-relaxed font-light font-telegraf',
             },
             size: {
                 default: '  ',

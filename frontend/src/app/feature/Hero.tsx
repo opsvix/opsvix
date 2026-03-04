@@ -4,9 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap, { ScrollTrigger } from "gsap/all";
 import React, { useRef } from "react";
 
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   const contain = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
@@ -40,7 +38,7 @@ const Hero = (props: Props) => {
         ref={contain}
         className="h-full rounded-4xl inset-shadow-[0_0_100px] inset-shadow-blue-100 border border-blue-200 bg-linear-to-br from-blue-50 to-blue-100 flex flex-col items-center justify-center overflow-hidden "
       >
-        <Typograph variant="heading" className="h-fit">
+        <Typograph variant="heading" className="text-5xl h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)]">
           We shape brand identities <br /> and narratives
         </Typograph>
         <div className="flex gap-2">

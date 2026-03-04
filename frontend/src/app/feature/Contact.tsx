@@ -1,18 +1,20 @@
 'use client'
-import React, { useState } from "react";
-import { ContactPopup } from "@/components/ContactPopup";
+import { useContact } from "@/context/ContactContext";
 import { Button } from "@/ui/button";
 import { Typograph } from "@/ui/typograph";
 
 const Contact = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { openContact } = useContact();
 
   return <div className="w-full h-full py-60 flex flex-col items-center justify-center gap-10">
     <Typograph variant="heading">
-      Tell us about your organisation <br /> Let's drive to the Impact
+       <br /> 
     </Typograph>
-    <Button onClick={() => setIsOpen(true)} >Get in Touch</Button>
-    <ContactPopup isOpen={isOpen} onClose={() => setIsOpen(false)} />
+        <Typograph variant="heading" className="text-5xl h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)] leading-[1.2]  ">
+      Tell us about your<span className="font-merriweather"> Organisation </span>  
+      <br/>  <span className="font-merriweather italic text-5xl"> Let&apos;s drive </span> &nbsp;to the Impact
+    </Typograph>
+    <Button onClick={openContact} >Get in Touch</Button>
   </div>;
 };
 

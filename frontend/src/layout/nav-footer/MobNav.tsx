@@ -3,13 +3,24 @@ import Link from "next/link";
 
 interface Props {
     menuOpen: boolean;
-    navItems: any[];
-    itemVariants: any;
-    handleNavClick: any;
-    setMenuOpen: any;
+    navItems: { id: string; label: string; href: string }[];
+    handleNavClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string, id: string) => void;
+    setMenuOpen: (open: boolean) => void;
 }
 
-export const MobNav = ({ menuOpen, navItems, itemVariants, handleNavClick, setMenuOpen }: Props) => {
+const itemVariants = {
+  hidden: { opacity: 0, filter: "blur(10px)", scale: 0.5 },
+  visible: (i: number) => ({
+    opacity: 1,
+    filter: "blur(0px)",
+    scale: 1,
+    transition: { delay: 0.2 + i * 0.1, duration: 0.3 },
+  }),
+};
+
+
+
+export const MobNav = ({ menuOpen, navItems, handleNavClick, setMenuOpen }: Props) => {
     return (
         <AnimatePresence>
             {menuOpen && (

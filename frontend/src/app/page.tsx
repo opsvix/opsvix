@@ -1,4 +1,4 @@
-import Image from "next/image";
+'use client'
 import Hero from "./feature/Hero";
 import About from "./feature/About";
 import Contact from "./feature/Contact";
@@ -15,6 +15,7 @@ export default function Home() {
         <Services />
         <Contact />
       </CustomLayout>
+
     </div>
   );
 }

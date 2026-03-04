@@ -1,13 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { ContactPopup } from "@/components/contact-popup";
-import { Mail } from "lucide-react";
 import MenuIcon from "@/ui/icon-menu";
-import { ContactPopup } from "@/components/ContactPopup";
+import { useContact } from "@/context/ContactContext";
 import { MobNav } from "./nav-footer/MobNav";
 import SelectionIndicator from "./nav-footer/SelectionIndicator";
 
@@ -16,7 +13,7 @@ const navItems = [
   { id: "portfolio", label: "Portfolio", href: "/portfolio" },
   { id: "services", label: "Services", href: "/services" },
   { id: "career", label: "Career", href: "/support" },
-  { id: "connect", label: "Connect", href: "/#about" },
+  { id: "connect", label: "Connect", href: "/contact" },
 ];
 
 const menuVariants = {
@@ -33,20 +30,12 @@ const menuVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, filter: "blur(10px)", scale: 0.5 },
-  visible: (i: number) => ({
-    opacity: 1,
-    filter: "blur(0px)",
-    scale: 1,
-    transition: { delay: 0.2 + i * 0.1, duration: 0.3 },
-  }),
-};
+
 
 export function Navigation() {
+  const { openContact } = useContact();
   const [activeItem, setActiveItem] = useState("home");
   const [menuOpen, setMenuOpen] = useState(true);
-  const [contactPopupOpen, setContactPopupOpen] = useState(false);
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
     width: 0,
@@ -54,16 +43,19 @@ export function Navigation() {
   });
   const itemRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
   const pathname = usePathname();
+  const [lastPathname, setLastPathname] = useState(pathname);
 
-  // Update active item based on pathname path
-  useEffect(() => {
-    if (pathname === "/packages") setActiveItem("packages");
-    else if (pathname === "/support") setActiveItem("support");
-    else if (pathname === "/about") setActiveItem("about");
-    else if (pathname === "/") {
-      setActiveItem("home");
-    }
-  }, [pathname]);
+  // Update active item based on pathname path during render
+  if (pathname !== lastPathname) {
+    let newItem = "home";
+    if (pathname === "/packages") newItem = "packages";
+    else if (pathname === "/support") newItem = "support";
+    else if (pathname === "/about") newItem = "about";
+    else if (pathname === "/") newItem = "home";
+
+    setLastPathname(pathname);
+    setActiveItem(newItem);
+  }
 
   // Update indicator position when activeItem changes
   useEffect(() => {
@@ -122,6 +114,11 @@ export function Navigation() {
     href: string,
     id: string,
   ) => {
+    if (id === "connect") {
+      e.preventDefault();
+      openContact();
+      return;
+    }
     // Only handle hash links on the home page
     if (href.startsWith("/#") && pathname === "/") {
       e.preventDefault();
@@ -195,7 +192,7 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <MobNav menuOpen={menuOpen} navItems={navItems} itemVariants={itemVariants} handleNavClick={handleNavClick} setMenuOpen={setMenuOpen} />
+            <MobNav menuOpen={menuOpen} navItems={navItems}   handleNavClick={handleNavClick} setMenuOpen={setMenuOpen} />
 
             <MenuIcon toggle={toggleMenu} open={menuOpen} />
           </div>
