@@ -13,7 +13,9 @@ export default function Home() {
       <CustomLayout className="bg-[#fcfcfc] ">
         <About />
         <Services />
-        <Contact />
+        <div className="w-full h-screen pb-40">
+          <Contact />
+        </div>
       </CustomLayout>
 
     </div>
