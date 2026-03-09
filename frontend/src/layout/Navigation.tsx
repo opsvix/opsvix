@@ -11,8 +11,6 @@ import SelectionIndicator from "./nav-footer/SelectionIndicator";
 const navItems = [
   { id: "home", label: "Home", href: "/" },
   { id: "portfolio", label: "Portfolio", href: "/portfolio" },
-  { id: "services", label: "Services", href: "/services" },
-  { id: "career", label: "Career", href: "/support" },
   { id: "connect", label: "Connect", href: "/contact" },
 ];
 
@@ -149,7 +147,7 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed bottom-5 left-0 right-0 z-50 p-4"
     >
-      <div className="flex  items-center justify-center md:max-w-7xl mx-auto">
+      <div className="flex  items-center justify-center w-fit md:max-w-7xl mx-auto">
         <motion.nav
           variants={menuVariants}
           animate={!menuOpen ? "footer" : "nav"}
@@ -158,7 +156,7 @@ export function Navigation() {
         >
           <div className="flex justify-between  items-center gap-1 relative ">
 
-            {!menuOpen && (
+            {/* {!menuOpen && (
               <div>
                 <div className="flex flex-row gap-3">
                   <p className="text-black">Services</p>
@@ -173,7 +171,7 @@ export function Navigation() {
                   <p className="text-black">Data Analytics</p>
                 </div>
               </div>
-            )}
+            )} */}
             <SelectionIndicator indicatorStyle={indicatorStyle} />
 
             {navItems.map((item) => (
@@ -184,7 +182,7 @@ export function Navigation() {
                 }}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href, item.id)}
-                className={`hidden md:block relative px-6 py-3 text-sm font-medium transition-colors duration-200 z-10 ${activeItem === item.id
+                className={` relative px-6 py-3 text-sm font-medium transition-colors duration-200 z-10 ${activeItem === item.id
                   ? "text-gray-800" // active text color
                   : "text-gray-500 hover:text-[#5C82A3]"
                   }`}
@@ -192,9 +190,9 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <MobNav menuOpen={menuOpen} navItems={navItems}   handleNavClick={handleNavClick} setMenuOpen={setMenuOpen} />
+            {/* <MobNav menuOpen={menuOpen} navItems={navItems}   handleNavClick={handleNavClick} setMenuOpen={setMenuOpen} /> */}
 
-            <MenuIcon toggle={toggleMenu} open={menuOpen} />
+            {/* <MenuIcon toggle={toggleMenu} open={menuOpen} /> */}
           </div>
         </motion.nav>
       </div>
