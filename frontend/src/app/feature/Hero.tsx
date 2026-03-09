@@ -38,17 +38,17 @@ const Hero = () => {
         ref={contain}
         className="h-full rounded-4xl inset-shadow-[0_0_100px] inset-shadow-blue-100 border border-blue-200 bg-linear-to-br from-blue-50 to-blue-100 flex flex-col items-center justify-center overflow-hidden "
       >
-        <Typograph variant="heading" className="text-5xl h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)]">
+        <Typograph variant="heading" className="text-4xl md:text-5xl h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)]">
           We shape brand identities <br /> and narratives
         </Typograph>
-        <div className="flex gap-2">
-          <p className="bg-blue-50 text-blue-500 px-2 py-1 text-sm text-center mt-5">
+        <div className="flex flex-wrap gap-2  w-full items-center justify-center">
+          <p className="bg-blue-50 text-blue-500 px-2 py-1 text-xs md:text-sm text-center mt-5">
             Product Development
           </p>
-          <p className="bg-pink-50 text-pink-500 px-2 py-1 text-sm text-center mt-5">
+          <p className="bg-pink-50 text-pink-500 px-2 py-1 text-xs md:text-sm  text-center mt-5">
             AI Systems
           </p>
-          <p className="bg-violet-50 text-violet-800 px-2 py-1 text-sm text-center mt-5">
+          <p className="bg-violet-50 text-violet-800 px-2 py-1 text-xs md:text-sm  text-center md:mt-5">
             AI Automation Infasturcture
           </p>
         </div>

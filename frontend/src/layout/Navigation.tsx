@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import MenuIcon from "@/ui/icon-menu";
+// import MenuIcon from "@/ui/icon-menu";
 import { useContact } from "@/context/ContactContext";
-import { MobNav } from "./nav-footer/MobNav";
+// import { MobNav } from "./nav-footer/MobNav";
 import SelectionIndicator from "./nav-footer/SelectionIndicator";
 
 const navItems = [
@@ -33,7 +33,7 @@ const menuVariants = {
 export function Navigation() {
   const { openContact } = useContact();
   const [activeItem, setActiveItem] = useState("home");
-  const [menuOpen, setMenuOpen] = useState(true);
+  // const [menuOpen, setMenuOpen] = useState(true);
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
     width: 0,
@@ -102,9 +102,9 @@ export function Navigation() {
     };
   }, [pathname]);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
   // Handle smooth scroll for anchor links
   const handleNavClick = (
@@ -150,7 +150,7 @@ export function Navigation() {
       <div className="flex  items-center justify-center w-fit md:max-w-7xl mx-auto">
         <motion.nav
           variants={menuVariants}
-          animate={!menuOpen ? "footer" : "nav"}
+          // animate={!menuOpen ? "footer" : "nav"}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="w-full h-14  md:w-auto bg-[#5f7084]/10 backdrop-blur-3xl border border-white rounded-full px-1.5 py-1 shadow-[0px_0px_30px_rgba(0,0,0,0.06)]  inset-shadow-[0_0_20px] inset-shadow-white"
         >

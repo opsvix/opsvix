@@ -9,7 +9,7 @@ import CardSwiper from "./CardSwiper";
 
 const Services = () => {
   return <div className="w-full h-full px-3 md:px-20 2xl:px-40 mx-auto bg-[#fcfcfc]   `">
-    <Typograph variant="heading" className="text-5xl h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)]  md:w-1/3 mx-auto">
+    <Typograph variant="heading" className="h-fit text-shadow-[#8FDDFF] text-blue-800 text-shadow-[0px_0px_5px_rgba(255,255,255,1)]  md:w-1/3 mx-auto">
       <span className="font-merriweather italic">Stories </span>That <br className="md:hidden"/> Help  Our Services <span className="font-merriweather ">Flourish </span>
     </Typograph>
     <Typograph size="sub">

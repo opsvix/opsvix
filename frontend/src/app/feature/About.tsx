@@ -15,18 +15,18 @@ const About = () => {
   const contain = useRef<HTMLDivElement | null>(null);
   return (
     <div
-      className="w-full h-screen relative z-20 flex flex-col items-center justify-center px-20 max-w-7xl mx-auto border-t-2 border-gray-200  bg-dot-8-s-2-neutral-200/50"
+      className="w-full h-screen relative z-20 flex flex-col items-center justify-center px-5 md:px-20 md:max-w-7xl mx-auto md:border-t-2 border-gray-200  bg-dot-8-s-2-neutral-200/50"
       ref={contain}
     >
       <TextOpacityOnScroll
-        className="w-full h-full flex items-center justify-center text-black text-2xl md:text-4xl lg:text-5xl font-extralight  text-center font-telegraf leading-3 "
+        className="w-full h-full flex items-center justify-center text-black text-4xl md:text-4xl lg:text-5xl font-extralight  text-center font-telegraf leading-3 "
         contain={contain}
         phrase="Opsvix Solutions partners with global companies to design, build, and
         scale digital products through strong engineering, practical AI, and
         reliable cloud systems."
       />
       <Carousel />
-      <div className="w-full h-40 xl:h-60 flex ">
+      <div className="w-full h-60 md:h-40 xl:h-60 flex ">
 
       </div>
     </div>
@@ -41,11 +41,11 @@ export const Carousel = () => {
     <div className="flex flex-row w-full h-fit     overflow-hidden items-center justify-between pointer-events-none md:pointer-events-auto select-none">
 
       <div className="flex flex-row items-center gap-3 shrink-0 z-10 bg-white/10 backdrop-blur-md p-2 rounded-xl border border-white/10 pr-6">
-        <Image src={trustedleft} alt="Trusted Left" width={35} height={35} priority />
+        <Image src={trustedleft} alt="Trusted Left" className="h-18 md:h-20" width={35} height={35} priority />
         <p className="text-center text-[#8D8D8D] text-xs md:text-sm leading-tight">
           Trusted by 35+<br /> organisations
         </p>
-        <Image src={trustedright} alt="Trusted Right" width={35} height={35} priority />
+        <Image src={trustedright} alt="Trusted Right" className="h-18 md:h-20" width={35} height={35} priority />
       </div>
 
       <div
