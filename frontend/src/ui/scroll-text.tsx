@@ -78,7 +78,7 @@ const TextOpacityOnScroll: React.FC<Props> = ({
         className,
       )}
     >
-      <div ref={body} className="flex flex-wrap leading-[1.4]">
+      <div ref={body} className="flex flex-wrap leading-[1.3] md:leading-[1.4]">
         {splitWords(phrase)}
       </div>
     </main>

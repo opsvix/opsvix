@@ -15,11 +15,11 @@ const About = () => {
   const contain = useRef<HTMLDivElement | null>(null);
   return (
     <div
-      className="w-full h-screen relative z-20 flex flex-col items-center justify-center px-5 md:px-20 md:max-w-7xl mx-auto md:border-t-2 border-gray-200  bg-dot-8-s-2-neutral-200/50"
+      className="w-full h-screen relative z-20 flex flex-col items-center justify-center px-8 md:px-20 md:max-w-7xl mx-auto md:border-t-2 border-gray-200  bg-dot-8-s-2-neutral-200/50"
       ref={contain}
     >
       <TextOpacityOnScroll
-        className="w-full h-full flex items-center justify-center text-black text-4xl md:text-4xl lg:text-5xl font-extralight  text-center font-telegraf leading-3 "
+        className="w-full h-full flex items-center justify-center text-black text-4xl md:text-4xl lg:text-5xl font-extralight  text-center font-telegraf md:leading-3 "
         contain={contain}
         phrase="Opsvix Solutions partners with global companies to design, build, and
         scale digital products through strong engineering, practical AI, and
