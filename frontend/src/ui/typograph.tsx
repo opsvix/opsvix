@@ -17,7 +17,7 @@ const typographVariants = cva(
             },
             size: {
                 default: '  ',
-                sub: 'text-center pt-5 pb-20 2xl:pb-30 w-1/3 mx-auto',
+                sub: 'text-center px-10 md:px-0 pt-5 pb-20 2xl:pb-30  mx-auto',
                 sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
                 lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
                 icon: 'size-9',

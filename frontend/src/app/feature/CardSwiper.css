@@ -1,0 +1,19 @@
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.slide1 { background: rgb(206,17,17); }
+.slide2 { background: rgb(0,140,255); }
+.slide3 { background: rgb(10,184,111); }
+.slide4 { background: rgb(211,122,7); }
+.slide5 { background: rgb(118,163,12); }
+.slide6 { background: rgb(180,10,47); }
+.slide7 { background: rgb(35,99,19); }
+.slide8 { background: rgb(0,68,255); }
+.slide9 { background: rgb(218,12,218); }

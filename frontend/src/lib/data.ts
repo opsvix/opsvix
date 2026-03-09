@@ -4,6 +4,8 @@ export const projects = [
         id: 2,
         title: "Map My Property",
         slug: "map-my-property",
+        textColor: "text-white",
+        color: "bg-[#8A817B]",
         description: `This project showcases our commitment to delivering high-quality digital solutions.
                   By integrating advanced technologies and user-centric design, we created a seamless experience
                   that meets the specific needs of the client and their users.`,
@@ -19,6 +21,8 @@ export const projects = [
         id: 3,
         title: "Personfiy",
         slug: "task-organiser",
+        color: "bg-[#D7D7D5]",
+        textColor: "text-white",
         description: "Description 3",
         image: ["/images/personify.png"],
         services: ["Product Development", "UI/UX Design", "AI Automation", "AI Analytics Dashboard"],
@@ -34,6 +38,7 @@ export const projects = [
         id: 1,
         title: "PlateUp",
         slug: "plateup",
+        color: "bg-[#F3F4F8]",
         description: "Description 1",
         image: ["/images/plateupDineIn.png", "/images/plateup-farm.png", "/images/plateupImac.png",],
         services: ["Product Development", "UI/UX Design", "AI Automation", "AI Analytics Dashboard"],
